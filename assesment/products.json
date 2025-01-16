@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 1200,
+      "category": "Electronics",
+      "imageUrl": "assets/laptop.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Shirt",
+      "price": 30,
+      "category": "Clothing",
+      "imageUrl": "assets/shirts.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Washing Machine",
+      "price": 500,
+      "category": "Home Appliances",
+      "imageUrl": "assets/washing-machine.jpg"
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 1200,
+      "category": "Electronics",
+      "imageUrl": "assets/laptop.jpg",
+      "quantity": 8
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+/* Ensure proper card layout and spacing */
+.card-body {
+    display: flex;
+    flex-direction: column; /* Default to column layout for small screens */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .card-body .d-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  /* Quantity Controls */
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .quantity-controls button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .quantity-display {
+    font-size: 16px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+  }
+  
+  /* Ensure proper button spacing */
+  .ms-sm-3 {
+    margin-left: 15px;
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width: 576px) {
+    .card-body {
+      flex-direction: row; /* For larger screens, place items in a row */
+      align-items: center;
+    }
+  
+    .quantity-controls {
+      margin-top: 0;
+      margin-left: 10px;
+    }
+  
+    .remove-btn {
+      margin-left: 10px;
+    }
+  
+    .cart-item-image {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .remove-btn {
+      margin-top: 10px;
+    }
+  
+    .quantity-controls {
+      margin-top: 10px;
+    }
+  }
+  

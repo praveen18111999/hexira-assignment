@@ -1,0 +1,43 @@
+<div class="container my-4">
+    <h2>Your Cart</h2>
+    <!-- Cart Items List -->
+    <div *ngIf="cartItems.length === 0">
+      <p>Your cart is empty.</p>
+    </div>
+  
+    <div *ngFor="let cartItem of cartItems" class="card mb-3">
+      <div class="card-body d-flex flex-column flex-sm-row align-items-center justify-content-between">
+        <!-- Product Info -->
+        <div class="d-flex flex-column flex-sm-row align-items-center w-100">
+          <img [src]="cartItem.product.imageUrl" alt="{{ cartItem.product.name }}" class="img-thumbnail cart-item-image">
+          <div class="ms-3">
+            <h5>{{ cartItem.product.name }}</h5>
+            <p>{{ cartItem.product.category }}</p>
+            <p>{{ cartItem.product.price | currency:'INR':'symbol' }}</p>
+          </div>
+        </div>
+  
+        <!-- Quantity Controls -->
+        <div class="d-flex align-items-center quantity-controls mt-3 mt-sm-0 ms-sm-3">
+          <button class="btn btn-outline-secondary" (click)="decrementQuantity(cartItem)" [disabled]="cartItem.quantity === 1">-</button>
+          <span class="mx-2 quantity-display">{{ cartItem.quantity }}</span>
+          <button class="btn btn-outline-secondary" (click)="incrementQuantity(cartItem)">+</button>
+        </div>
+  
+        <!-- Remove Button -->
+        <button class="btn btn-danger mt-3 mt-sm-0 ms-3" (click)="removeItem(cartItem)">Remove</button>
+      </div>
+    </div>
+  
+    <!-- Grand Total -->
+    <div class="mt-4 d-flex justify-content-between align-items-center">
+      <h4>Grand Total:</h4>
+      <h4>{{ getGrandTotal() | currency:'INR':'symbol' }}</h4>
+    </div>
+  
+    <!-- Checkout Button (optional) -->
+    <div class="mt-4 text-center">
+      <button class="btn btn-primary">Proceed to Checkout</button>
+    </div>
+  </div>
+  
