@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
-import { Product } from '../models/productmodel';
+import { ProductService } from '../../../product.service';
+import { Product } from '../../../models/productmodel';
 
 @Component({
   selector: 'app-homepage',
@@ -12,21 +12,21 @@ export class HomepageComponent implements OnInit {
 
 
 
-  
+
   products: Product[] = [];
   filteredProducts: Product[] = [];
   searchQuery: string = '';
   selectedCategory: string = 'All';
 
   categories: string[] = [];
-  loading: boolean =false;
-  error: string=``;
+  loading: boolean = false;
+  error: string = ``;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.loading = true;  // Set loading to true initially
-    
+
     this.productService.getProducts().subscribe({
       next: (data) => {
         this.products = data;
@@ -38,11 +38,11 @@ export class HomepageComponent implements OnInit {
         this.loading = false;  // Set loading to false in case of error
       }
     });
-  
+
     // Fetch categories
     this.categories = this.productService.getCategories();
   }
-  
+
 
   onSearchChange(): void {
     this.filterProducts();

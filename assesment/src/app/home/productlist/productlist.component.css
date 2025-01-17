@@ -71,7 +71,86 @@
   margin-top: 20px;  /* Adds a gap from the top */
 }
 
-/* Responsiveness for smaller screens */
+/* Responsiveness for smaller screens *//* Center content and add spacing */
+.container {
+  padding-top: 50px;
+}
+
+/* Product Image Styling */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+/* Product Information */
+h2.fw-bold {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.text-muted {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.text-success {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.text-secondary {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Add to Cart Button */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 1.1rem;
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Back to Products Button */
+.btn-outline-secondary {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+/* Spinner Styling */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-6 {
+    margin-bottom: 20px;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
+
 @media (max-width: 576px) {
   .cart-icon {
     margin-top: 15px;  /* Adjust top margin for smaller screens */

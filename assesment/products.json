@@ -22,5 +22,20 @@
       "imageUrl": "assets/washing-machine.jpg"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "2",
+      "name": "Shirt",
+      "price": 30,
+      "category": "Clothing",
+      "imageUrl": "assets/shirts.jpg"
+    },
+    {
+      "id": "1",
+      "name": "Laptop",
+      "price": 1200,
+      "category": "Electronics",
+      "imageUrl": "assets/laptop.jpg"
+    }
+  ]
 }

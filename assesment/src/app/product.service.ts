@@ -13,7 +13,7 @@ export class ProductService {
   private productsUrl = 'http://localhost:3000/products';
   private cartUrl = 'http://localhost:3000/cart';
 
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productsUrl);
@@ -22,27 +22,32 @@ export class ProductService {
   getCategories(): string[] {
     return ['Electronics', 'Clothing', 'Home Appliances'];
   }
-  addToCart(product: Product): Observable<Product> {  
+  addToCart(product: Product): Observable<Product> {
     return this.http.post<Product>(this.cartUrl, product);
-    
-  } 
+
+  }
 
   getCart(): Observable<Product[]> {
     return this.http.get<Product[]>(this.cartUrl);
   }
 
-  
+
   deleteFromCart(product: Product): Observable<Product> {
     return this.http.delete<Product>(this.cartUrl + '/' + product.id);
-}
-getCartItems(): Observable<Product[]> {
-  return this.http.get<Product[]>(this.cartUrl);
-}
+  }
+  getCartItems(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.cartUrl);
+  }
 
-updateCart(product:Product):Observable<Product>{
-  return this.http.put<Product>(this.cartUrl + '/' + product.id, product);
-}
+  updateCart(product: Product): Observable<Product> {
+    return this.http.put<Product>(this.cartUrl + '/' + product.id, product);
+  }
 
-
+ 
+  getProductById(id: string | number): Observable<Product> {
+    return this.http.get<Product>(`${this.productsUrl}/${id}`);
+  }
+  
+  
 
 }

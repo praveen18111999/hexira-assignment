@@ -3,12 +3,12 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 import { ProductListComponent } from './productlist/productlist.component';
-import { CartpageComponent } from './cartpage/cartpage.component';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NotFoundComponent } from './not-found/not-found.component';
+
+import { FormsModule } from '@angular/forms';
+import { IndianCurrencyPipe } from '../pipes/indian-currency.pipe';
 
 
 
@@ -17,19 +17,17 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     HomepageComponent,
     ProductListComponent,
-    CartpageComponent,
-    NotFoundComponent,
 
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule,
     HttpClientModule,
-    CurrencyPipe,
+    FormsModule,
+    IndianCurrencyPipe
 
-    
-   
+
+
   ]
 })
 export class HomeModule { }

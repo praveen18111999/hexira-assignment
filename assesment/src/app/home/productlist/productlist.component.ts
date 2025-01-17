@@ -1,84 +1,70 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
-import { Product } from '../models/productmodel';
-import { trigger, transition, animate, style } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from '../../product.service';
+import { Product } from '../../models/productmodel';
 
 @Component({
   selector: 'app-productlist',
   templateUrl: './productlist.component.html',
   styleUrls: ['./productlist.component.css'],
-  animations: [
-    trigger('moveToCart', [
-      transition('void => *', [
-        style({ transform: 'scale(0)', opacity: 0 }),
-        animate('0.5s ease-in', style({ transform: 'scale(1)', opacity: 1 }))
-      ]),
-      transition('* => void', [
-        animate('0.5s ease-out', style({ transform: 'scale(0)', opacity: 0 }))
-      ])
-    ])
-  ]
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = [];
-  filteredProducts: Product[] = [];
-  categories: string[] = [];
-  selectedCategory: string = '';
-  cartItems: Product[] = [];  // Track items in the cart
+  product!: Product; // Single product
   loading: boolean = false;
   error: string = '';
 
-  constructor(private productService: ProductService) {}
-
+  constructor(
+    private productService: ProductService,
+    private route: ActivatedRoute // Inject ActivatedRoute to access route params
+  ) {}
   ngOnInit(): void {
     this.loading = true;
-    this.productService.getProducts().subscribe({
-      next: (data) => {
-        this.products = data;
-        this.filteredProducts = data;
-        this.categories = this.productService.getCategories();
-        this.loading = false;
-      },
-      error: () => {
-        this.error = 'Sorry, we are unable to load the products at the moment. Please try again later.';
-        this.loading = false;
-      }
-    });
+  
+    const productId = this.route.snapshot.paramMap.get('id');
+    console.log('Product ID:', productId);
+  
+    if (productId) {
+      this.productService.getProductById(productId).subscribe({
+        next: (data: Product) => {
+          this.product = data;
+          this.loading = false;
+        },
+        error: (err) => {
+          this.error = 'Sorry, the product could not be loaded. Please try again later.';
+          console.error(err);
+          this.loading = false;
+        }
+      });
+    } else {
+      this.error = 'Invalid product ID.';
+      this.loading = false;
+    }
   }
-
-  // Filter products by category
-  onCategoryChange(): void {
-    this.filteredProducts = this.selectedCategory
-      ? this.products.filter(product => product.category === this.selectedCategory)
-      : this.products;
-  }
-
-  // Add product to cart if not already present
-  addToCart(product: Product): void {
+  
+  
+  // Add the product to the cart
+  addToCart(): void {
     this.productService.getCart().subscribe({
       next: (cartItems: Product[]) => {
-        const isAlreadyInCart = cartItems.some(item => item.id === product.id);
-  
+        const isAlreadyInCart = cartItems.some(item => item.id === this.product.id);
+
         if (isAlreadyInCart) {
-          alert(`${product.name} is already in the cart.`);
+          alert(`${this.product.name} is already in the cart.`);
           return;
         }
-  
-        this.productService.addToCart(product).subscribe({
+
+        this.productService.addToCart(this.product).subscribe({
           next: () => {
-            this.cartItems.push(product);
-            console.log(`${product.name} added to cart`);
-            alert(`${product.name} has been added to the cart.`);
+            alert(`${this.product.name} has been added to the cart.`);
           },
           error: () => {
-            this.error = 'Error adding to cart';
-          }
+            this.error = 'Error adding the product to the cart.';
+          },
         });
       },
       error: () => {
-        this.error = 'Error fetching cart data';
-      }
+        this.error = 'Error fetching the cart.';
+      },
     });
   }
-  
 }

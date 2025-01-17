@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
-import { Product } from '../models/productmodel';
+import { ProductService } from 'src/app/product.service';
+import { Product } from 'src/app/models/productmodel';  
+import { IndianCurrencyPipe } from 'src/app/pipes/indian-currency.pipe';
 
 @Component({
   selector: 'app-cartpage',
   templateUrl: './cartpage.component.html',
-  styleUrls: ['./cartpage.component.css']
+  styleUrls: ['./cartpage.component.css'],
 })
 export class CartpageComponent implements OnInit {
   cartItems: { product: Product, quantity: number }[] = [];
