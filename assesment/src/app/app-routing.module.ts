@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HomepageComponent } from './home/components/homepage/homepage.component';
-import { ProductListComponent } from './home/productlist/productlist.component';
+import { ProductListComponent } from './home/components/productlist/productlist.component';
 import { CartpageComponent } from './cart/components/cartpage/cartpage.component';
 import { NotfoundComponent } from './error/components/notfound/notfound.component';
 

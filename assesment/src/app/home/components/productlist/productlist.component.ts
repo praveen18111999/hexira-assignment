@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../../product.service';
-import { Product } from '../../models/productmodel';
+import { ProductService } from '../../../product.service';
+import { Product } from '../../../models/productmodel';
 
 @Component({
   selector: 'app-productlist',
@@ -16,13 +16,13 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute // Inject ActivatedRoute to access route params
-  ) {}
+  ) { }
   ngOnInit(): void {
     this.loading = true;
-  
+
     const productId = this.route.snapshot.paramMap.get('id');
     console.log('Product ID:', productId);
-  
+
     if (productId) {
       this.productService.getProductById(productId).subscribe({
         next: (data: Product) => {
@@ -40,8 +40,8 @@ export class ProductListComponent implements OnInit {
       this.loading = false;
     }
   }
-  
-  
+
+
   // Add the product to the cart
   addToCart(): void {
     this.productService.getCart().subscribe({

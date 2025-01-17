@@ -61,19 +61,19 @@
 /* Cart Icon Styling */
 .cart-icon {
   float: right;  /* Floats the icon to the right */
-  font-size: 3rem;  /* Size of the icon */
+  font-size: 25px;  /* Size of the icon */
   background-color:white;  /* Background color */
   color: black;  /* Icon color */
   padding: 15px;  /* Padding inside the circle */
-  border-radius: 50%;  /* Makes it a circular icon */
+  border-radius: 25%;  /* Makes it a circular icon */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Adds a subtle shadow */
   cursor: pointer;  /* Makes it clickable */
-  margin-top: 20px;  /* Adds a gap from the top */
+  margin-top: 5px;  
 }
 
 /* Responsiveness for smaller screens *//* Center content and add spacing */
 .container {
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 /* Product Image Styling */
@@ -151,11 +151,6 @@ h2.fw-bold {
   }
 }
 
-@media (max-width: 576px) {
-  .cart-icon {
-    margin-top: 15px;  /* Adjust top margin for smaller screens */
-  }
-}
 
 @media (max-width: 768px) {
   .category-filter select {

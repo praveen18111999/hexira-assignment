@@ -1,21 +1,21 @@
-<div *ngIf="error" class="alert alert-danger">
+<div *ngIf="error" class="alert alert-danger text-center">
   {{ error }}
 </div>
 
 <div *ngIf="!error" class="container my-4">
   <!-- Filters Section -->
-  <div class="filters d-flex justify-content-between flex-wrap mb-4">
+  <div class="filters d-flex justify-content-between flex-wrap mb-4 align-items-center">
     <!-- Search Bar -->
     <input
       type="text"
       [(ngModel)]="searchQuery"
       (input)="onSearchChange()"
       placeholder="Search products by name"
-      class="form-control w-50 w-sm-75 w-md-50 w-lg-25"
+      class="form-control w-100 w-md-50 w-lg-25 mb-2 mb-md-0 shadow-sm"
     />
 
     <!-- Category Filter -->
-    <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()" class="form-select w-25">
+    <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()" class="form-select w-100 w-md-25 shadow-sm">
       <option value="All">All Categories</option>
       <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
     </select>
@@ -23,16 +23,40 @@
 
   <!-- Product List Section -->
   <div *ngIf="!error" class="row">
-    <a [routerLink]="['/product',product.id]" *ngFor="let product of filteredProducts">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="product-card card shadow-sm h-100">
-          <img [src]="product.imageUrl" alt="{{ product.name }}" class="card-img-top" />
-          <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
-            <p class="card-text">{{ product.price | currency:'INR':'symbol' }}</p>
+    <div *ngFor="let product of paginatedProducts" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="product-card card h-100 border-0 shadow-lg rounded-4 overflow-hidden">
+        <a [routerLink]="['/product', product.id]" class="text-decoration-none text-dark">
+          <img [src]="product.imageUrl" alt="{{ product.name }}" class="card-img-top product-img " />
+          <div class="card-body text-center">
+            <h5 class="card-title fw-semibold text-primary">{{ product.name }}</h5>
+            <p class="card-text fs-5 fw-bold text-success">{{ product.price | currency:'INR':'symbol' }}</p>
           </div>
-        </div>
+        </a>
       </div>
-    </a>
+    </div>
   </div>
+
+  <!-- Bootstrap Pagination -->
+  <nav *ngIf="totalPages > 1" aria-label="Page navigation" class="d-flex justify-content-center mt-4">
+    <ul class="pagination">
+      <!-- Previous Button -->
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link" (click)="changePage(currentPage - 1)">Previous</button>
+      </li>
+
+      <!-- Page Numbers -->
+      <li
+        class="page-item"
+        *ngFor="let page of pagesArray"
+        [class.active]="currentPage === page"
+      >
+        <button class="page-link" (click)="changePage(page)">{{ page }}</button>
+      </li>
+
+      <!-- Next Button -->
+      <li class="page-item" [class.disabled]="currentPage === totalPages">
+        <button class="page-link" (click)="changePage(currentPage + 1)">Next</button>
+      </li>
+    </ul>
+  </nav>
 </div>

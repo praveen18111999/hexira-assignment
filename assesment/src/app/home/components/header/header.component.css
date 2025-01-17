@@ -1,0 +1,37 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  /* Cart icon container */
+  .cart-icon {
+    position: relative;
+  }
+  
+  /* Cart count badge */
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red; /* Customize the badge color */
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 6px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Optional: Add styles for the cart icon */
+  .cart-icon i {
+    font-size: 24px; /* Customize icon size */
+    color: white;
+  }
+  

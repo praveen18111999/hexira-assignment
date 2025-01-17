@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { ProductService } from 'src/app/product.service';
-import { Product } from 'src/app/models/productmodel';  
-import { IndianCurrencyPipe } from 'src/app/pipes/indian-currency.pipe';
+import { Product } from 'src/app/models/productmodel';
 
 @Component({
   selector: 'app-cartpage',
@@ -9,58 +9,82 @@ import { IndianCurrencyPipe } from 'src/app/pipes/indian-currency.pipe';
   styleUrls: ['./cartpage.component.css'],
 })
 export class CartpageComponent implements OnInit {
-  cartItems: { product: Product, quantity: number }[] = [];
+  cartForm: FormGroup;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private fb: FormBuilder) {
+    this.cartForm = this.fb.group({
+      cartItems: this.fb.array([]),
+    });
+  }
 
   ngOnInit(): void {
     this.loadCartItems();
   }
 
-  // Fetch cart items from the server
+  get cartItems(): FormArray {
+    return this.cartForm.get('cartItems') as FormArray;
+  }
+
+  // Load cart items and populate the form
   loadCartItems(): void {
     this.productService.getCartItems().subscribe(cart => {
-      this.cartItems = cart.map(item => ({
-        product: item,
-        quantity: 1 // Initialize quantity as 1
-      }));
+      this.cartItems.clear();
+      cart.forEach(item => {
+        this.cartItems.push(
+          this.fb.group({
+            product: [item],  // Ensure the product data is passed correctly
+            quantity: [item.quantity || 1],  // Ensure you set the correct quantity, default to 1 if not found
+          })
+        );
+      });
     });
   }
+  
 
   // Increment quantity for a specific cart item
-  incrementQuantity(cartItem: { product: Product, quantity: number }): void {
-    cartItem.quantity++;
-    this.updateCart(cartItem);
-  }
-
-  // Decrement quantity for a specific cart item
-  decrementQuantity(cartItem: { product: Product, quantity: number }): void {
-    if (cartItem.quantity > 1) {
-      cartItem.quantity--;
-      this.updateCart(cartItem);
+  incrementQuantity(index: number): void {
+    const control = this.cartItems.at(index).get('quantity');
+    if (control) {
+      control.setValue(control.value + 1);
+      this.updateCart(index);
     }
   }
 
-  // Update cart with the new quantity for the item
-  updateCart(cartItem: { product: Product, quantity: number }): void {
+  // Decrement quantity for a specific cart item
+  decrementQuantity(index: number): void {
+    const control = this.cartItems.at(index).get('quantity');
+    if (control && control.value > 1) {
+      control.setValue(control.value - 1);
+      this.updateCart(index);
+    }
+  }
+
+  // Update cart with the new quantity
+  updateCart(index: number): void {
+    const cartItem = this.cartItems.at(index).value;
     const updatedProduct = { ...cartItem.product, quantity: cartItem.quantity };
     this.productService.updateCart(updatedProduct).subscribe();
   }
 
   // Remove an item from the cart
-  removeItem(cartItem: { product: Product, quantity: number }): void {
+  removeItem(index: number): void {
+    const cartItem = this.cartItems.at(index).value;
     this.productService.deleteFromCart(cartItem.product).subscribe(() => {
-      this.cartItems = this.cartItems.filter(item => item !== cartItem);
+      this.cartItems.removeAt(index);
     });
   }
 
-  // Calculate the total price for a specific cart item (price * quantity)
-  getTotalForItem(cartItem: { product: Product, quantity: number }): number {
+  // Calculate the total price for a specific cart item
+  getTotalForItem(index: number): number {
+    const cartItem = this.cartItems.at(index).value;
     return cartItem.product.price * cartItem.quantity;
   }
 
   // Calculate the grand total for the cart
   getGrandTotal(): number {
-    return this.cartItems.reduce((total, cartItem) => total + this.getTotalForItem(cartItem), 0);
+    return this.cartItems.controls.reduce((total, control) => {
+      const cartItem = control.value;
+      return total + cartItem.product.price * cartItem.quantity;
+    }, 0);
   }
 }

@@ -2,40 +2,316 @@
   "products": [
     {
       "id": "1",
-      "name": "Laptop",
-      "price": 1200,
-      "category": "Electronics",
-      "imageUrl": "assets/laptop.jpg"
+      "name": "iPhone 13",
+      "price": 69999,
+      "category": "Mobiles",
+      "imageUrl": "https://m.media-amazon.com/images/I/71xb2xkN5qL.jpg",
+      "description": "A powerful smartphone from Apple featuring the A15 Bionic chip, advanced dual-camera system, and a stunning Super Retina XDR display."
     },
     {
       "id": "2",
-      "name": "Shirt",
-      "price": 30,
-      "category": "Clothing",
-      "imageUrl": "assets/shirts.jpg"
+      "name": "Samsung Galaxy S22",
+      "price": 64999,
+      "category": "Mobiles",
+      "imageUrl": "https://m.media-amazon.com/images/I/71qZERyxy6L.jpg",
+      "description": "Samsung's flagship smartphone with a vibrant AMOLED display, high-performance processor, and pro-grade camera capabilities."
     },
     {
       "id": "3",
-      "name": "Washing Machine",
-      "price": 500,
-      "category": "Home Appliances",
-      "imageUrl": "assets/washing-machine.jpg"
-    }
-  ],
-  "cart": [
-    {
-      "id": "2",
-      "name": "Shirt",
-      "price": 30,
-      "category": "Clothing",
-      "imageUrl": "assets/shirts.jpg"
+      "name": "Anker Powerline Cable",
+      "price": 899,
+      "category": "Chargers and Cables",
+      "imageUrl": "https://sc04.alicdn.com/kf/H586ff0ed567544219fa1d4a46d00c9dbj.jpg",
+      "description": "Durable and fast-charging USB-C cable with reinforced connectors, designed for long-lasting performance."
     },
     {
-      "id": "1",
-      "name": "Laptop",
-      "price": 1200,
+      "id": "4",
+      "name": "Sony 55-inch Smart TV",
+      "price": 48999,
+      "category": "TVs",
+      "imageUrl": "https://www.myg.in/images/thumbnails/300/300/detailed/74/sy1-removebg-preview.png",
+      "description": "A sleek 55-inch smart TV with 4K HDR, Dolby Vision, and voice control for an immersive viewing experience."
+    },
+    {
+      "id": "5",
+      "name": "Ray-Ban Aviator Sunglasses",
+      "price": 12999,
+      "category": "Sunglasses",
+      "imageUrl": "https://api.woggles.in/api/catalog/products/woggles_new_image_9_12_2022/midnight_polarized_wayfarer_sunglasses_base_28-9-2023.jpg",
+      "description": "Iconic aviator sunglasses with polarized lenses and a classic design, perfect for sunny days."
+    },
+    {
+      "id": "6",
+      "name": "Fitbit Versa 4",
+      "price": 19999,
+      "category": "Smartwatches",
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Sense_2_Versa_4_Hero.width-1200.format-webp.webp",
+      "description": "A stylish smartwatch with fitness tracking, heart rate monitoring, and customizable watch faces."
+    },
+    {
+      "id": "7",
+      "name": "LG 65-inch OLED TV",
+      "price": 124999,
+      "category": "TVs",
+      "imageUrl": "https://www.myg.in/images/thumbnails/300/300/detailed/74/sy1-removebg-preview.png",
+      "description": "A premium OLED TV with ultra-thin design, 4K clarity, and advanced color accuracy for cinematic experiences."
+    },
+    {
+      "id": "8",
+      "name": "Nivea Moisturizing Cream",
+      "price": 349,
+      "category": "Beauty Products",
+      "imageUrl": "https://images.apollo247.in/pub/media/catalog/product/a/v/ave0176_1-may24_1_.jpg?tr=q-80,f-webp,w-400,dpr-3,c-at_max%201200w",
+      "description": "A rich and hydrating moisturizing cream for soft, supple skin. Suitable for all skin types."
+    },
+    {
+      "id": "9",
+      "name": "Ariel Washing Detergent",
+      "price": 999,
+      "category": "Detergents",
+      "imageUrl": "https://www.luckystore.in/cdn/shop/files/ArielGreenAutomatic2.5Kg_Imported.png?v=1723789272",
+      "description": "Powerful detergent with stain-removal technology, leaving clothes bright and clean after every wash."
+    },
+    {
+      "id": "10",
+      "name": "Boat Rockerz 450",
+      "price": 1499,
+      "category": "Mobiles",
+      "imageUrl": "https://avstore.in/cdn/shop/files/1.AVStore-Bose-QuietComfort-45-Noise-Front-View-Hero.jpg?v=1685695623&width=2000",
+      "description": "Wireless headphones with deep bass, comfortable ear cups, and long battery life for uninterrupted music playback."
+    },
+    {
+      "id": "11",
+      "name": "Mi Smart Band 6",
+      "price": 3499,
+      "category": "Smartwatches",
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Sense_2_Versa_4_Hero.width-1200.format-webp.webp",
+      "description": "Fitness tracker with AMOLED display and SpO2 monitoring."
+    },
+    {
+      "id": "12",
+      "name": "Samsung Galaxy M32",
+      "price": 14999,
+      "category": "Mobiles",
+      "imageUrl": "https://m.media-amazon.com/images/I/71qZERyxy6L.jpg",
+      "description": "Affordable smartphone with 6000mAh battery and 64MP quad camera."
+    },
+    {
+      "id": "13",
+      "name": "LG 4K UHD Smart TV",
+      "price": 52999,
+      "category": "TVs",
+      "imageUrl": "https://www.myg.in/images/thumbnails/300/300/detailed/74/sy1-removebg-preview.png",
+      "description": "Ultra HD Smart TV with AI ThinQ and active HDR."
+    },
+    {
+      "id": "14",
+      "name": "Sony WH-1000XM4 Headphones",
+      "price": 29999,
       "category": "Electronics",
-      "imageUrl": "assets/laptop.jpg"
+      "imageUrl": "https://avstore.in/cdn/shop/files/1.AVStore-Bose-QuietComfort-45-Noise-Front-View-Hero.jpg?v=1685695623&width=2000",
+      "description": "Industry-leading noise-canceling wireless headphones."
+    },
+    {
+      "id": "15",
+      "name": "Nikon D5600 DSLR Camera",
+      "price": 45999,
+      "category": "Electronics",
+      "imageUrl": "https://sony.scene7.com/is/image/sonyglobalsolutions/01_ZV-1F?$goldenAreaImage$&fmt=png-alpha",
+      "description": "Versatile DSLR with a 24.2MP sensor and full HD video."
+    },
+    {
+      "id": "16",
+      "name": "Apple iPhone 13",
+      "price": 79999,
+      "category": "Mobiles",
+      "imageUrl": "https://m.media-amazon.com/images/I/71qZERyxy6L.jpg",
+      "description": "Latest iPhone with A15 Bionic chip and dual-camera system."
+    },
+    {
+      "id": "17",
+      "name": "Puma Sports T-Shirt",
+      "price": 1199,
+      "category": "Clothing",
+      "imageUrl": "https://brownliving.in/cdn/shop/products/sustainable-t-shirt-recycled-plastic-recycled-cotton-blend-authentic-design-a13786-1-m-mens-tshirt-brown-living-540735_800x.jpg?v=1682968317",
+      "description": "Breathable and stylish sports t-shirt for workouts."
+    },
+    {
+      "id": "18",
+      "name": "Realme Buds Wireless 2",
+      "price": 2499,
+      "category": "Electronics",
+      "imageUrl": "https://avstore.in/cdn/shop/files/1.AVStore-Bose-QuietComfort-45-Noise-Front-View-Hero.jpg?v=1685695623&width=2000",
+      "description": "Wireless earphones with ANC and LDAC support."
+    },
+    {
+      "id": "19",
+      "name": "Philips Mixer Grinder",
+      "price": 5999,
+      "category": "Home Appliances",
+      "imageUrl": "https://www.premierkitchen.in/wp-content/uploads/2023/01/Premier-Carina-Mixer-Grinder-MG5133-230V-50-Hz.jpg",
+      "description": "Powerful mixer grinder with advanced air ventilation."
+    },
+    {
+      "id": "20",
+      "name": "Tissot Chrono XL Watch",
+      "price": 34999,
+      "category": "Smartwatches",
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Sense_2_Versa_4_Hero.width-1200.format-webp.webp",
+      "description": "Elegant chronograph watch with a classic leather strap."
+    },
+    {
+      "id": "21",
+      "name": "Samsung 6.5kg Top Load Washer",
+      "price": 16999,
+      "category": "Home Appliances",
+      "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/in/ww80t4040ce-tl/gallery/in-front-loading-washer-ww70t4020cheo-377223-ww80t4040ce-tl-395196808?$684_547_PNG$",
+      "description": "Energy-efficient top load washing machine with wobble technology."
+    },
+    {
+      "id": "22",
+      "name": "Bose SoundLink Revolve+",
+      "price": 23999,
+      "category": "Electronics",
+      "imageUrl": "https://avstore.in/cdn/shop/files/1.AVStore-Bose-QuietComfort-45-Noise-Front-View-Hero.jpg?v=1685695623&width=2000",
+      "description": "Portable Bluetooth speaker with 360-degree sound."
+    },
+    {
+      "id": "23",
+      "name": "Apple Watch SE",
+      "price": 29999,
+      "category": "Smartwatches",
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Sense_2_Versa_4_Hero.width-1200.format-webp.webp",
+      "description": "Affordable smartwatch with essential fitness tracking features."
+    },
+    {
+      "id": "24",
+      "name": "Boat Airdopes 441",
+      "price": 2499,
+      "category": "Electronics",
+      "imageUrl": "https://avstore.in/cdn/shop/files/1.AVStore-Bose-QuietComfort-45-Noise-Front-View-Hero.jpg?v=1685695623&width=2000",
+      "description": "Wireless earbuds with IPX7 waterproof rating and immersive sound."
+    },
+    {
+      "id": "25",
+      "name": "Sony Bravia 55-inch 4K TV",
+      "price": 69999,
+      "category": "TVs",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSovRstzT_ZDh8uv4wRtpzELpMvPi-AAfDd4w&s",
+      "description": "55-inch Ultra HD Smart TV with Dolby Vision and Atmos."
+    },
+    {
+      "id": "26",
+      "name": "Havells Insta Cook PT",
+      "price": 3199,
+      "category": "Home Appliances",
+      "imageUrl": "https://inspireonline.in/cdn/shop/files/MacBook_Air_15_in_M3_Space_Grey_PDP_Image_Position_1__en-IN_65b3b632-c0fa-43bd-bd82-9b3d0e01fbbb.jpg?v=1730311615&width=823",
+      "description": "Efficient induction cooktop with preset cooking modes."
+    },
+    {
+      "id": "27",
+      "name": "Nike Revolution 5 Shoes",
+      "price": 3499,
+      "category": "Clothing",
+      "imageUrl": "https://store.lenovo.com/media/catalog/product/cache/90c9f6aca4e4b4913161c59294bbd070/8/1/81W101QYIN-0_1_10.webp",
+      "description": "Comfortable running shoes with soft foam cushioning."
+    },
+    {
+      "id": "28",
+      "name": "Samsung Galaxy Tab A7",
+      "price": 17999,
+      "category": "Electronics",
+      "imageUrl": "https://store.lenovo.com/media/catalog/product/cache/90c9f6aca4e4b4913161c59294bbd070/8/1/81W101QYIN-0_1_10.webp",
+      "description": "Slim and stylish tablet with a 10.4-inch display."
+    },
+    {
+      "id": "29",
+      "name": "Syska LED Bulb",
+      "price": 299,
+      "category": "Home Appliances",
+      "imageUrl": "https://neverowned.in/cdn/shop/files/SYSKA-SSK-SMW-7W-Smart-Lights-491600458-i-2-1200Wx1200H_1000x.jpg?v=1717051436",
+      "description": "Energy-efficient LED bulb with long-lasting performance."
+    },
+    {
+      "id": "31",
+      "name": "Lenovo IdeaPad 3",
+      "price": 38999,
+      "category": "Electronics",
+      "imageUrl": "https://store.lenovo.com/media/catalog/product/cache/90c9f6aca4e4b4913161c59294bbd070/8/1/81W101QYIN-0_1_10.webp",
+      "description": "Powerful laptop for everyday computing with AMD Ryzen processor."
+    },
+    {
+      "id": "32",
+      "name": "OnePlus Buds Pro",
+      "price": 9999,
+      "category": "Electronics",
+      "imageUrl": "https://avstore.in/cdn/shop/files/1.AVStore-Bose-QuietComfort-45-Noise-Front-View-Hero.jpg?v=1685695623&width=2000",
+      "description": "Premium wireless earbuds with adaptive noise cancellation."
+    },
+    {
+      "id": "33",
+      "name": "Samsung Galaxy Watch 4",
+      "price": 24999,
+      "category": "Smartwatches",
+      "imageUrl": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw61458d43/images/Titan/Catalog/90188AP01_1.jpg?sw=600&sh=600",
+      "description": "Smartwatch with advanced health monitoring features."
+    },
+    {
+      "id": "34",
+      "name": "Whirlpool 340L Refrigerator",
+      "price": 33999,
+      "category": "Home Appliances",
+      "imageUrl": "https://5.imimg.com/data5/SELLER/Default/2024/5/416749412/EN/CZ/WA/80060426/godrej-double-door-refrigerator.jpg",
+      "description": "Double-door refrigerator with IntelliFresh technology."
+    },
+    {
+      "id": "35",
+      "name": "Fitbit Charge 5",
+      "price": 14999,
+      "category": "Smartwatches",
+      "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Sense_2_Versa_4_Hero.width-1200.format-webp.webp",
+      "description": "Advanced fitness tracker with ECG and stress management tools."
+    },
+    {
+      "id": "36",
+      "name": "LG 260L Double Door Fridge",
+      "price": 25999,
+      "category": "Home Appliances",
+      "imageUrl": "https://5.imimg.com/data5/SELLER/Default/2024/5/416749412/EN/CZ/WA/80060426/godrej-double-door-refrigerator.jpg",
+      "description": "Energy-efficient refrigerator with smart inverter compressor."
+    },
+    {
+      "id": "37",
+      "name": "Amazon Echo Dot (4th Gen)",
+      "price": 4499,
+      "category": "Electronics",
+      "imageUrl": "https://inspireonline.in/cdn/shop/files/MacBook_Air_15_in_M3_Space_Grey_PDP_Image_Position_1__en-IN_65b3b632-c0fa-43bd-bd82-9b3d0e01fbbb.jpg?v=1730311615&width=823",
+      "description": "Smart speaker with Alexa voice control."
+    },
+    {
+      "id": "38",
+      "name": "Apple MacBook Air M1",
+      "price": 92999,
+      "category": "Electronics",
+      "imageUrl": "https://inspireonline.in/cdn/shop/files/MacBook_Air_15_in_M3_Space_Grey_PDP_Image_Position_1__en-IN_65b3b632-c0fa-43bd-bd82-9b3d0e01fbbb.jpg?v=1730311615&width=823",
+      "description": "Ultra-thin laptop with Apple's M1 chip for enhanced performance."
+    },
+    {
+      "id": "39",
+      "name": "Samsung 43-inch Crystal 4K TV",
+      "price": 37999,
+      "category": "TVs",
+      "imageUrl": "https://www.myg.in/images/thumbnails/300/300/detailed/74/sy1-removebg-preview.png",
+      "description": "Smart TV with Crystal UHD display and HDR support."
+    },
+    {
+      "id": "40",
+      "name": "Philips Air Fryer",
+      "price": 9999,
+      "category": "Home Appliances",
+      "imageUrl": "https://images.philips.com/is/image/philipsconsumer/vrs_57e878680d2ea0618b1639cc9185041de75a8c59?$pnglarge$&wid=1250",
+      "description": "Healthy air fryer with rapid air technology."
     }
-  ]
+  ],
+  "cart": []
 }
