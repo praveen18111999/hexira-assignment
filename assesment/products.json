@@ -22,14 +22,5 @@
       "imageUrl": "assets/washing-machine.jpg"
     }
   ],
-  "cart": [
-    {
-      "id": "1",
-      "name": "Laptop",
-      "price": 1200,
-      "category": "Electronics",
-      "imageUrl": "assets/laptop.jpg",
-      "quantity": 8
-    }
-  ]
+  "cart": []
 }

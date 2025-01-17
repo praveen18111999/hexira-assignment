@@ -19,16 +19,30 @@ export class HomepageComponent implements OnInit {
   selectedCategory: string = 'All';
 
   categories: string[] = [];
+  loading: boolean =false;
+  error: string=``;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(data => {
-      this.products = data;
-      this.filteredProducts = data;
+    this.loading = true;  // Set loading to true initially
+    
+    this.productService.getProducts().subscribe({
+      next: (data) => {
+        this.products = data;
+        this.filteredProducts = data;
+        this.loading = false;  // Set loading to false after data is loaded
+      },
+      error: () => {
+        this.error = 'Sorry, we are unable to load the products at the moment. Please try again later.';
+        this.loading = false;  // Set loading to false in case of error
+      }
     });
+  
+    // Fetch categories
     this.categories = this.productService.getCategories();
   }
+  
 
   onSearchChange(): void {
     this.filterProducts();

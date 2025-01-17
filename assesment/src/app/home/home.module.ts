@@ -8,6 +8,8 @@ import { ProductListComponent } from './productlist/productlist.component';
 import { CartpageComponent } from './cartpage/cartpage.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 
 @NgModule({
@@ -16,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomepageComponent,
     ProductListComponent,
     CartpageComponent,
+    NotFoundComponent,
 
   ],
   imports: [
@@ -23,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeRoutingModule,
     FormsModule,
     HttpClientModule,
-    CurrencyPipe
+    CurrencyPipe,
+
+    
    
   ]
 })

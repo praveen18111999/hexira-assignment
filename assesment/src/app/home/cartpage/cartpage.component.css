@@ -46,6 +46,52 @@
     margin-left: 15px;
   }
   
+  .empty-cart-container {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom right, #f0f4ff, #e0eaff);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 40px auto;
+  }
+  
+  .empty-cart-content h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .empty-cart-content p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .empty-cart-image {
+    width: 180px;
+    height: auto;
+    opacity: 0.9;
+  }
+  
+  .btn-gradient {
+    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .btn-gradient:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(240, 101, 149, 0.4);
+  }
+  
+
+
   /* Responsive adjustments */
   @media (min-width: 576px) {
     .card-body {

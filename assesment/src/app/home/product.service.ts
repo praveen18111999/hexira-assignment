@@ -24,7 +24,14 @@ export class ProductService {
   }
   addToCart(product: Product): Observable<Product> {  
     return this.http.post<Product>(this.cartUrl, product);
+    
   } 
+
+  getCart(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.cartUrl);
+  }
+
+  
   deleteFromCart(product: Product): Observable<Product> {
     return this.http.delete<Product>(this.cartUrl + '/' + product.id);
 }
@@ -35,5 +42,7 @@ getCartItems(): Observable<Product[]> {
 updateCart(product:Product):Observable<Product>{
   return this.http.put<Product>(this.cartUrl + '/' + product.id, product);
 }
+
+
 
 }

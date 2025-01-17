@@ -4,10 +4,17 @@ import { HomeComponent } from './home.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProductListComponent } from './productlist/productlist.component';
 import { CartpageComponent } from './cartpage/cartpage.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
-const routes: Routes = [{ path: '', component: HomeComponent ,children:[{path: 'homepage', component: HomepageComponent},{path:'productlist',component:ProductListComponent},{path:'cartpage',component:CartpageComponent}  
+const routes: Routes = [{
+  path: '', component: HomeComponent,
+  children: [{ path: 'homepage', component: HomepageComponent },
+  { path: 'productlist', component: ProductListComponent }, { path: 'cartpage', component: CartpageComponent },
+  {path:'notfound',component:NotFoundComponent},
+  {path:'**',redirectTo:'/home/notfound' },  
 
-] }]; 
+  ]
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
