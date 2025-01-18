@@ -68,7 +68,7 @@ export class HomepageComponent implements OnInit {
   }
 
   // Calculate total pages and update paginated products
-  private calculatePagination(): void {
+ calculatePagination(): void {
     this.totalPages = Math.ceil(this.filteredProducts.length / this.productsPerPage);
     this.pagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
     this.updatePaginatedProducts();  // Update products for the first page

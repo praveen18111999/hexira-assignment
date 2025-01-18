@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Product } from './models/productmodel';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private productsUrl = 'http://localhost:3000/products';
-  private cartUrl = 'http://localhost:3000/cart';
+  private productsUrl = environment.apiUrl; 
+  private cartUrl = environment.cartUrl;  
 
   // BehaviorSubject to keep track of the cart count
   private cartCountSubject = new BehaviorSubject<number>(this.getCartCountFromCookie());
