@@ -1,4 +1,6 @@
 /* Custom Styles for Category Filter and Product Cards */
+/* Add ngx-toastr styles to make sure it works */
+
 
 /* Filters Section */
 .category-filter {
@@ -132,6 +134,7 @@ h2.fw-bold {
   margin-bottom: 10px;
 }
 
+
 .text-muted {
   font-size: 1rem;
   color: #6c757d;
@@ -155,6 +158,7 @@ h2.fw-bold {
   padding: 10px;
   transition: background-color 0.3s ease-in-out;
 }
+
 
 .btn-primary:hover {
   background-color: #0056b3;

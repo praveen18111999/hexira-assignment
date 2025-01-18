@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { IndianCurrencyPipe } from '../pipes/indian-currency.pipe';
 import { HeaderComponent } from './components/header/header.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -26,7 +27,11 @@ import { HeaderComponent } from './components/header/header.component';
     HomeRoutingModule,
     HttpClientModule,
     FormsModule,
-    IndianCurrencyPipe
+    IndianCurrencyPipe,ToastrModule.forRoot({
+      positionClass: 'toast-top-right', // Optional: Global position for toastr notifications
+      timeOut: 3000,  // Optional: Duration for which the toastr is visible
+      closeButton: true,  // Optional: Adds a close button to the toastr
+    }),
 
 
 

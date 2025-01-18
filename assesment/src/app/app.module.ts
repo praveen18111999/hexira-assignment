@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -17,8 +19,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-   
+     BrowserAnimationsModule,  // Required for ngx-toastr animations
+     ToastrModule.forRoot( {positionClass: 'toast-top-right',  // Default position
+      preventDuplicates: true,} )   
+ 
     
   ],
   providers: [],

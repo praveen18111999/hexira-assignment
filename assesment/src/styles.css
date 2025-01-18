@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ensure toastr container is at the top-right */
+.toast-container {
+    top: 50px !important; /* Adjust if necessary */
+    right: 50px !important; /* Adjust if necessary */
+  }
+  .roboto-font {
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
