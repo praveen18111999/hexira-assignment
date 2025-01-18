@@ -11,6 +11,43 @@
   font-size: 1rem;
   width: 100%;
 }
+.product-image {
+  width: 70%;  /* Ensure the image takes up full width of its container */
+  height: 300px; /* Fixed height for all product images */
+  object-fit: cover; /* Make sure the image covers the area without distorting its aspect ratio */
+}
+
+
+/* Responsiveness for Mobile Screens */
+@media (max-width: 768px) {
+  /* Adjust Product Card Image for smaller screens */
+  .product-card img {
+    height: auto;  /* Allow image height to adjust according to aspect ratio */
+    max-height: 200px;  /* Optional: To limit the max height of the image */
+  }
+  
+  /* Adjust container padding for better spacing */
+  .container {
+    padding-top: 20px;
+  }
+}
+
+/* For very small screens like phones in portrait mode */
+@media (max-width: 576px) {
+  /* Further adjustments to image size */
+  .product-card img {
+    height: auto;
+    max-height: 180px;  /* Adjust max height to fit the screen */
+  }
+
+  .product-card .card-body {
+    padding: 0.8rem;  /* Adjust card body padding for small screens */
+  }
+
+  .product-card .card-title {
+    font-size: 1rem;  /* Smaller title size */
+  }
+}
 
 /* Card Styling */
 .product-card {

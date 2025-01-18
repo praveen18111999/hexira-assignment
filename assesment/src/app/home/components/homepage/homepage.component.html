@@ -16,7 +16,7 @@
     />
 
     <!-- Category Filter -->
-    <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()" class="form-select w-100 w-md-25 shadow-sm">
+    <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()" class="form-select w-50 w-md-25 shadow-sm">
       <option value="All">All Categories</option>
       <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
     </select>
@@ -25,7 +25,7 @@
   <!-- Product List Section -->
   <div *ngIf="!error" class="row">
     <div *ngFor="let product of paginatedProducts" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-      <div class="product-card card h-100 border-0 shadow-lg rounded-4 overflow-hidden">
+      <div class="product-card card h-200px border-0 shadow-lg rounded-4 overflow-hidden">
         <a [routerLink]="['/product', product.id]" class="text-decoration-none text-dark">
           <img [src]="product.imageUrl" alt="{{ product.name }}" class="card-img-top product-img " />
           <div class="card-body text-center">

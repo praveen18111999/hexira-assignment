@@ -1,16 +1,80 @@
+/* Hover effect for product cards */
 .product-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .product-card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Product image styling */
 .product-img {
-  height: 200px;
+  height: 300px;
   object-fit: cover;
 }
+
+/* For smaller screens (max-width 576px) */
 @media (max-width: 576px) {
   .product-img {
-    height: 150px;
+    height: 330px;
+  }
+
+  /* Filters container layout for small screens */
+  .filters {
+    flex-direction: column;
+    align-items: center; /* Center align form fields */
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Search bar and category select fields */
+  .filters .form-control,
+  .filters .form-select {
+    width: 90%; /* Allow form fields to take less than full width */
+    max-width: 400px; /* Set a max width to avoid stretching on large screens */
+    margin-bottom: 1rem;
+  }
+
+  .pagination {
+    font-size: 0.9rem;
+  }
+}
+
+/* For medium screens (min-width 576px and max-width 992px) */
+@media (min-width: 576px) and (max-width: 992px) {
+  .filters {
+    flex-direction: row; /* Align the filters horizontally */
+    justify-content: space-between;
+  }
+
+  .filters .form-control,
+  .filters .form-select {
+    width: 48%; /* Adjust width to be less than half */
+    margin-bottom: 0;
+  }
+
+  .pagination {
+    font-size: 1rem;
+  }
+}
+
+/* For large screens (min-width 992px) */
+@media (min-width: 992px) {
+  .product-img {
+    height: 330px; /* Restore height on larger screens */
+  }
+
+  .filters {
+    justify-content: flex-start;
+  }
+
+  .filters .form-control,
+  .filters .form-select {
+    width: 30%; /* Set fixed width for larger screens */
+  }
+
+  .pagination {
+    font-size: 1rem;
   }
 }
