@@ -313,5 +313,14 @@
       "description": "Healthy air fryer with rapid air technology."
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "3",
+      "name": "Anker Powerline Cable",
+      "price": 899,
+      "category": "Chargers and Cables",
+      "imageUrl": "assets/anker cable.jpg",
+      "description": "Durable and fast-charging USB-C cable with reinforced connectors, designed for long-lasting performance."
+    }
+  ]
 }
