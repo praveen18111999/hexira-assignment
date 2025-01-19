@@ -5,6 +5,8 @@ import { HomepageComponent } from './home/components/homepage/homepage.component
 import { ProductListComponent } from './home/components/productlist/productlist.component';
 import { CartpageComponent } from './cart/components/cartpage/cartpage.component';
 
+import { ErrorComponent } from './notfound/components/error/error.component';
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'homepage', component: HomepageComponent },
@@ -13,11 +15,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/home/homepage', pathMatch: 'full' },
 
 
-
+{path:'error/notfound',component:ErrorComponent}  ,
 
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
-  { path: '**', redirectTo: 'error/notfound' }
+  { path: 'notfound', loadChildren: () => import('./notfound/notfound.module').then(m => m.NotfoundModule) },
+  { path: '**', redirectTo: '/error/notfound' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
